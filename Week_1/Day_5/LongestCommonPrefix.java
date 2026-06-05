@@ -19,3 +19,4 @@ public class LongestCommonPrefix {
         System.out.println(longestCommonPrefix(strs));
     }
 }
+// Time Complexity -> O(nlogn * m);
