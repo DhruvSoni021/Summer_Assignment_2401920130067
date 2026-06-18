@@ -1,0 +1,23 @@
+// package Week_3.Day_4;
+
+import java.util.Stack;
+
+public class DailyTemperatures {
+     public int[] dailyTemperatures(int[] t) 
+    {
+        int n = t.length;
+        int[] ans = new int[n];
+        Stack<Integer> st = new Stack<>();
+
+        for(int i = 0; i < n; i++) 
+        {
+            while(st.size()>0 && t[i] > t[st.peek()]) 
+            {
+                int idx = st.pop();
+                ans[idx] = i - idx;
+            }
+            st.push(i);
+        }
+        return ans;
+    }
+}
